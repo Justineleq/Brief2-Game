@@ -1,9 +1,18 @@
-const playground = document.querySelector("#playground");
-const giveMeWater = document.querySelectorAll("#feed .waterdrop");
-const giveMeFood = document.querySelectorAll("#feed .apple");
+// function decreaseHearts() {
+//     let heartsDecrease = document.getElementsByClassName(life-line)
+//     heartsDecrease.style.
+// }
 
-console.log(giveMeFood);
-console.log(giveMeWater);
+
+
+
+const playground = document.querySelector("#playground");
+const waterdrop = document.querySelector(".waterdrop");
+const apple = document.querySelector(".apple");
+const mouth = document.getElementById("#mouth")
+
+console.log(apple); 
+console.log(waterdrop); 
 
 let isMouseClicked = false;
 
@@ -12,31 +21,50 @@ let isMouseClicked = false;
 playground.addEventListener("mousemove", (event) => {   
     let x = event.clientX - 50;
     let y = event.clientY - 50;
+
     // seulement si le bouton de la souris est cliqué
     if(isMouseClicked){
-        giveMeWater.style.top = y + "px";
-        giveMeWater.style.left = x + "px";
-    }    
+        waterdrop.style.top = y + "px";
+        waterdrop.style.left = x + "px";
+
+    else if(isMouseClicked) {
+        apple.style.top = y + "px";
+        apple.style.left = x + "px";
+    } 
+    }   
 })
 
 // on met le boolean à true si la souris est cliquée
-giveMeWater.forEach(water => {
-    water.addEventListener("mousedown", (event) => {
-        console.log("mousedown");
-        isMouseClicked = true;
-        water.style.cursor = "grabbing";
-    })  
-})
+waterdrop.addEventListener("mousedown", (event) => {
+    console.log("mousedown");
+    isMouseClicked = true;
+    waterdrop.style.cursor = "grabbing";
+})  
 
 // on met le boolean à false si la souris est relâchée
-giveMeWater.forEach(water => {
-    water.addEventListener("mouseup", (event) => {
-        console.log("mouseup");
-        isMouseClicked = false;
-        water.style.cursor = "grab";
-
-    // if (mouseup === document.getElementById("#pet"))
-        
-
-    })
+waterdrop.addEventListener("mouseup", (event) => {
+    console.log("mouseup");
+    isMouseClicked = false;
+    waterdrop.style.cursor = "grab";
 })
+
+apple.addEventListener("mousedown", (event) => {
+    console.log("mousedown");
+    isMouseClicked = true;
+    apple.style.cursor = "grabbing";
+})  
+
+// on met le boolean à false si la souris est relâchée
+apple.addEventListener("mouseup", (event) => {
+    console.log("mouseup");
+    isMouseClicked = false;
+    apple.style.cursor = "grab";
+})
+
+// Storing the pets name
+
+// localStorage.setItem('petsName', 'Name given');
+
+// const savedText = localStorage.getItem('petsName');
+
+// console.log(savedText)
