@@ -1,4 +1,4 @@
-1. Create my html
+ 1. Create my html
         header = name of the pet - text box
         life line = images of hearts
 
