@@ -13,11 +13,11 @@ body {
 }
 
 .top {
-    margin: 5px;
+    margin: 10px;
 }
 
 h3 {
-    margin: 3px;
+    margin: 5px;
     font-family: 'Dosis', sans-serif;
 }
 
@@ -30,12 +30,14 @@ h3 {
 }
 
 .lifeBarWaterdrop {
+    margin: 10px;
     height: 10px;
     width: 50%;
     border: 1px black solid;
 }
 
 .lifeBarApple {
+    margin: 10px;
     height: 10px;
     width: 50%;
     border: 1px black solid;

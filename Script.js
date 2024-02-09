@@ -1,3 +1,5 @@
+import Lifebar from "./LifeLine.js";
+
 const playground = document.querySelector("#playground");
 const waterdropArray = document.querySelectorAll(".waterdrop");
 
@@ -36,10 +38,8 @@ waterdropArray.forEach(waterdrop => {
     })
 })
 
-// Storing the pets name
+const lifeBar = new Lifebar()
 
-// localStorage.setItem('petsName', 'Name given');
-
-// const savedText = localStorage.getItem('petsName');
-
-// console.log(savedText)
+lifeBar.barForApples()
+lifeBar.barForWaterdrops()
+lifeBar.createHTML()

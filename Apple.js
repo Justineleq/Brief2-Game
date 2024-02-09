@@ -1,4 +1,5 @@
 
+
 const appleArray = document.querySelectorAll(".apple");
 
 console.log(appleArray);

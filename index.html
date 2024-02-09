@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" class="">
-    <script defer src="Script.js"></script>
-    <script defer src="Apple.js"></script>
-    <script defer src="LifeLine.js"></script>
+    <script defer src="Script.js" type="module"></script>
+    <script src="Apple.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
@@ -15,13 +14,17 @@
 <body>
     <section class="screen-circle">
         <section class="top">
-            <div>
+            <div class="top">
                 <h3>My name is :</h3>
                 <input type="text" class="pets-name" id="petsName">
             </div>
             <div id="lifeBars">
+                <div id="lifeBarWaterdropContainer">
                 <div class="lifeBarWaterdrop"></div>
-                <div class="lifeBarApple"></div>           
+            </div>
+            <div id="lifeBarAppleContainer">
+                <div class="lifeBarApple"></div>
+            </div>         
             </div>
         </section>
             <div id="playground">
