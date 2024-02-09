@@ -3,7 +3,7 @@ export default class Lifebar {
   #colour;
   #life;
 
-  constructor(colour = "green", life = 100) {
+  constructor(colour = "lightpink", life = 100) {
     this.#id = Math.floor(Math.random() * 9999) + 1;
     this.#colour = colour;
     this.#life = life;
@@ -46,10 +46,10 @@ export default class Lifebar {
   }
 
   // Permet de récupérer l'élément HTML avec la classe 'perdre' de l'objet en cours.
-  get boutonPerteVie() {
-    let bouton = this.conteneur.querySelector(".perdre");
-    return bouton;
-  }
+//   get boutonPerteVie() {
+//     let bouton = this.conteneur.querySelector(".perdre");
+//     return bouton;
+//   }
 
   // Permet de récupérer l'élément HTML avec la classe 'gagner' de l'objet en cours.
   get boutonGainVie() {
@@ -68,22 +68,24 @@ export default class Lifebar {
     let barre = document.createElement("div");
     barre.style.border = "1px solid black";
     barre.style.height = "10px";
+    barre.style.borderRadius = "3px";
+    barre.style.margin = "5px"
 
     conteneur.appendChild(barre);
 
     let barreDeVie = document.createElement("div");
-    barreDeVie.id = "barre-" + this.id;
+    barreDeVie.id = "barre" + this.id;
     barreDeVie.style.width = "100%";
     barreDeVie.style.height = "10px";
-    barreDeVie.style.backgroundColor = this.couleur;
+    barreDeVie.style.backgroundColor = this.colour;
 
     barre.appendChild(barreDeVie);
 
-    let boutonPerdreVie = document.createElement("button");
-    boutonPerdreVie.textContent = "Perdre de la vie";
-    boutonPerdreVie.classList.add("perdre");
+    // let boutonPerdreVie = document.createElement("button");
+    // boutonPerdreVie.textContent = "Perdre de la vie";
+    // boutonPerdreVie.classList.add("perdre");
 
-    conteneur.appendChild(boutonPerdreVie);
+    // conteneur.appendChild(boutonPerdreVie);
 
     let boutonGagnerVie = document.createElement("button");
     boutonGagnerVie.textContent = "Gagner de la vie";
@@ -113,20 +115,35 @@ export default class Lifebar {
       this.#life = this.#life - 10;
 
       if (this.#life <= 20) {
-        this.appleBar.style.backgroundColor = "red";
+        this.barredevie.style.backgroundColor = "red";
       }
 
       if (this.#life >= 20 && this.#life <= 50) {
-        this.appleBar.style.backgroundColor = "orange";
+        this.barredevie.style.backgroundColor = "orange";
       }
 
       this.appleBar();
     }
   }
   appleBar() {
-    this.barreDeVie.style.width = this.#life + "%";
+    this.barredevie.style.width = this.#life + "%";
   }
-}
+
+  losingLife() {
+    let dying = document.getElementById(`barre${this.id}`)
+   let time = setInterval(() => {
+        if(this.life === 0) {
+            clearInterval(time)
+        }
+        if(this.life > 0 && this.life <= 100) {
+            this.colour = "lightorange";
+            this.life -= 1;
+            dying.style.width = this.life + '%';
+        }
+    }, 500)
+        }
+    }
+  
 
 // const hearts = document.querySelectorAll(".lifeLine");
 

@@ -12,4 +12,4 @@ drop zone, draggable element,
 
 3. hearts slowly get smaller and then rempli when he eats or drinks.
 
-<!-- 4. food/water bar that gradually decreases -->
+4. food/water bar that gradually decreases

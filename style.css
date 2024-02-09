@@ -25,24 +25,6 @@ h3 {
     border-radius: 3px;
 }
 
-.lifeBars {
-    margin: 5%;
-}
-
-.lifeBarWaterdrop {
-    margin: 10px;
-    height: 10px;
-    width: 50%;
-    border: 1px black solid;
-}
-
-.lifeBarApple {
-    margin: 10px;
-    height: 10px;
-    width: 50%;
-    border: 1px black solid;
-}
-
 #playground {
     height: 500px;
     width: 500px;

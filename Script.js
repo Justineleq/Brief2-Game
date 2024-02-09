@@ -37,10 +37,14 @@ waterdropArray.forEach((waterdrop) => {
   });
 });
 
-const appelLifeBar = new Lifebar();
+const appleLifeBar = new Lifebar();
 
-appelLifeBar.creerHTML();
+appleLifeBar.creerHTML();
 
 const waterdropLifeBar = new Lifebar();
 
 waterdropLifeBar.creerHTML();
+
+appleLifeBar.losingLife()
+
+waterdropLifeBar.losingLife()
