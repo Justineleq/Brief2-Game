@@ -32,8 +32,5 @@ appleArray.forEach(apple => {
         isMouseClickedApple = false;
         apple.style.cursor = "grab";
 
-        //     if isMouseClicked.mouth = false;
-        // mouth.addEventListener
-
     })
 })
