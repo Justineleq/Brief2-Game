@@ -3,7 +3,7 @@ export default class Lifebar {
   #colour;
   #life;
 
-  constructor(colour = "lightpink", life = 100) {
+  constructor(colour, life = 100) {
     this.#id = Math.floor(Math.random() * 9999) + 1;
     this.#colour = colour;
     this.#life = life;
@@ -33,31 +33,33 @@ export default class Lifebar {
     this.#colour = colour;
   }
 
-  // Permet de récupérer l'élément HTML avec l'id 'conteneur' de l'objet en cours.
   get conteneur() {
     let conteneur = document.querySelector("#conteneur" + this.#id);
     return conteneur;
   }
 
-  // Permet de récupérer l'élément HTML avec l'id 'barredevie....' de l'objet en cours.
-  get barredevie() {
-    let barredevie = document.querySelector("#barredevie" + this.#id);
-    return barredevie;
+  get barreDeVie() {
+    let barreDeVie = document.querySelector("#barre" + this.#id);
+    return barreDeVie;
   }
 
-  // Permet de récupérer l'élément HTML avec la classe 'perdre' de l'objet en cours.
-//   get boutonPerteVie() {
-//     let bouton = this.conteneur.querySelector(".perdre");
-//     return bouton;
-//   }
-
-  // Permet de récupérer l'élément HTML avec la classe 'gagner' de l'objet en cours.
-  get boutonGainVie() {
-    let bouton = this.conteneur.querySelector(".gagner");
-    return bouton;
+  lifeUp() {
+    return this.lifeUp()
   }
 
-  // Permet de créer les éléments HTML nécessaire à l'affichage de la barre de vie.
+  addingLife() {
+    return this. addingLife()
+  }
+
+  removeRhinoImg() {
+    this.removeRhinoImg()
+  }
+
+  deadImg() {
+    this.deadImg()
+  }
+
+// Creation of lifeBars
   creerHTML() {
     const lifeBarsContainer = document.getElementById("lifeBars");
 
@@ -66,7 +68,7 @@ export default class Lifebar {
     lifeBarsContainer.appendChild(conteneur);
 
     let barre = document.createElement("div");
-    barre.style.border = "1px solid black";
+    barre.style.border = "1px solid white";
     barre.style.height = "10px";
     barre.style.borderRadius = "3px";
     barre.style.margin = "5px"
@@ -80,113 +82,45 @@ export default class Lifebar {
     barreDeVie.style.backgroundColor = this.colour;
 
     barre.appendChild(barreDeVie);
+  }
 
-    // let boutonPerdreVie = document.createElement("button");
-    // boutonPerdreVie.textContent = "Perdre de la vie";
-    // boutonPerdreVie.classList.add("perdre");
+  removeRhinoImg() {
+    let removeImg = document.getElementById("mouth");
+    removeImg.style.visibility = "hidden"
+  }
 
-    // conteneur.appendChild(boutonPerdreVie);
-
-    let boutonGagnerVie = document.createElement("button");
-    boutonGagnerVie.textContent = "Gagner de la vie";
-    boutonGagnerVie.classList.add("gagner");
-
-    conteneur.appendChild(boutonGagnerVie);
+  deadImg() {
+    let skeleton = document.getElementById("skeleton");
+    skeleton.style.visibility = "visible"
   }
 
   addingLife() {
     if (this.#life <= 90) {
-      this.#life = this.#life + 10;
+      this.#life = this.#life + 15;
       console.log("Yummy");
-      this.barForApples();
-    }
-
-    if (this.#life <= 20) {
-      this.appleBar.style.backgroundColor = "red";
-    }
-
-    if (this.#life >= 20 && this.#life <= 50) {
-      this.appleBar.style.backgroundColor = "orange";
+      this.lifeUp();
     }
   }
-
-  removingLife() {
-    if (this.#life >= 10) {
-      this.#life = this.#life - 10;
-
-      if (this.#life <= 20) {
-        this.barredevie.style.backgroundColor = "red";
-      }
-
-      if (this.#life >= 20 && this.#life <= 50) {
-        this.barredevie.style.backgroundColor = "orange";
-      }
-
-      this.appleBar();
-    }
-  }
-  appleBar() {
-    this.barredevie.style.width = this.#life + "%";
+  lifeUp() {
+    this.barreDeVie.style.width = this.#life + "%";
   }
 
+// Loses life but couldn't get the colour to change
   losingLife() {
     let dying = document.getElementById(`barre${this.id}`)
-   let time = setInterval(() => {
+    let time = setInterval(() => {
         if(this.life === 0) {
             clearInterval(time)
+            this.removeRhinoImg()
+            this.deadImg()
+            alert("RIP")
         }
         if(this.life > 0 && this.life <= 100) {
-            this.colour = "lightorange";
+            this.colour = "orange";
             this.life -= 1;
             dying.style.width = this.life + '%';
-        }
-    }, 500)
-        }
-    }
-  
+        } 
+    }, 250)
+  }
+}
 
-// const hearts = document.querySelectorAll(".lifeLine");
-
-// const heartArray = Array.from(hearts)
-
-// console.log(heartArray)
-
-// heartArray.forEach(hearts => {
-//   hearts = setInterval(remove(hearts), 3000);
-// })
-
-// let heartToRemove = 0;
-
-// function removeHeart() {
-
-//     if (heartToRemove < heartArray.length) {
-
-//         heartArray[heartToRemove].remove();
-
-//         heartToRemove++;
-
-//         console.log(removeHeart);
-//     }
-// }
-
-// removeHeart()
-
-// function removeHeart() {
-
-//     if (heartArray.length >= i++) {
-
-//         heartArray[4].remove();
-// }
-// }
-
-// let  = setInterval(removeHeart, 1000);
-
-// heartArray[1].remove();
-
-// myInterval = setInterval(heartArray, 3000);
-
-// setInterval(function() {
-//     heartArray[i].remove
-// }, 1000);
-
-// heartArray[1].remove()

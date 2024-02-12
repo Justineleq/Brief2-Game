@@ -1,15 +1,7 @@
- 1. Create my html
-        header = name of the pet - text box
-        life line = images of hearts
+===== Rules ======
 
-        Main = pet
-        footer = food - drag and drop 
-                water - drag and drop
+1. Name your Tamagotchi.
 
-2. drag and drop - dissapear when it lands on the animal
+2. Make sure to feed them and give them water. (you can't because it doesn't work, but it would be nice, right?!)
 
-drop zone, draggable element, 
-
-3. hearts slowly get smaller and then rempli when he eats or drinks.
-
-4. food/water bar that gradually decreases
+3. That's all folks.....

@@ -3,6 +3,7 @@ body {
     justify-content: center;
     align-content: center;
     background-color: lightgoldenrodyellow;
+    font-family: 'Dosis', sans-serif;
 }
 
 .screen-circle {
@@ -13,42 +14,45 @@ body {
 }
 
 .top {
+    display: flex;
+    justify-content: center;
     margin: 10px;
 }
 
 h3 {
     margin: 5px;
-    font-family: 'Dosis', sans-serif;
 }
 
 .pets-name {
     border-radius: 3px;
-}
-
-#playground {
-    height: 500px;
-    width: 500px;
+    background-Color: white;
+    border: solid 1px lightpink;
 }
 
 .pet-area {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 125px;
+    margin: 115px;
+    position:relative;
 }
 
 .pet {
+    position: absolute;
    height: 200px;
    width: 200px;
 }
 
+#feed {
+    display: flex;
+    justify-content: space-between;
+}
+
 .waterdropbox {
     display: flex;
-    justify-content:space-between;
 }
 
 .waterdrop {
-    position: absolute;
     height: 60px;
     width: 60px;
     background-image: url("icons8-water-drop-48.png");
@@ -60,10 +64,25 @@ h3 {
 }
 
 .apple {
-    margin: 0 5px 0 0;
+    margin: 0 5px 0 15px;
     background-image: url("icons8-apple-58.png");
     width: 58px;
     height: 58px;
     background-repeat: no-repeat;
+}
+
+.deadImg {
+    background-image: ("icons8-skeleton-100.png");
+    height: 200px;
+    width:200px;
+    visibility: hidden;
+}
+
+.deadImgVisible {
+    background-image: ("icons8-skeleton-100.png");
+    height: 200px;
+    width:200px;
+    visibility: visible;
     position: absolute;
+    
 }
