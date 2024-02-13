@@ -2,6 +2,6 @@
 
 1. Name your Tamagotchi.
 
-2. Make sure to feed them and give them water. (you can't because it doesn't work, but it would be nice, right?!)
+2. Make sure to feed them and give them water by dragging the waterdrops and apples to your Tamagotchi.
 
-3. That's all folks.....
+3. He will die in the end....that's life!!

@@ -43,11 +43,12 @@ function handleDrop(event) {
   if (draggedItem.classList.contains("apple")) {
     // Update the apple life bar when dropped on the pet area
     appleLifeBar.addingLife();
-    draggedItem.remove();
+    
+
   } else if (draggedItem.classList.contains("waterdrop")) {
     // Update the waterdrop life bar when dropped on the pet area
     waterdropLifeBar.addingLife();
-    draggedItem.remove();
+    // draggedItem.remove();
   }
 }
 
@@ -57,8 +58,6 @@ petArea.addEventListener("dragover", (event) => {
 });
 
 petArea.addEventListener("drop", handleDrop);
-
-
 
 appleLifeBar.creerHTML();
 waterdropLifeBar.creerHTML();

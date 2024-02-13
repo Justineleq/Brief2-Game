@@ -4,10 +4,11 @@ body {
     align-content: center;
     background-color: lightgoldenrodyellow;
     font-family: 'Dosis', sans-serif;
+    cursor: grab;
 }
 
 .screen-circle {
-    background-color: rgb(189, 212, 189);
+    background-color: rgb(198, 214, 198);
     height: 600px;
     width: 500px;
     border-radius: 20px;
@@ -65,9 +66,9 @@ h3 {
 
 .apple {
     margin: 0 5px 0 15px;
-    background-image: url("icons8-apple-58.png");
     width: 58px;
     height: 58px;
+    background-image: url("icons8-apple-58.png");
     background-repeat: no-repeat;
 }
 
@@ -84,5 +85,8 @@ h3 {
     width:200px;
     visibility: visible;
     position: absolute;
-    
 }
+
+
+cursor: grab;
+cursor: move;

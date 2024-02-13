@@ -59,6 +59,7 @@ export default class Lifebar {
     this.deadImg()
   }
 
+
 // Creation of lifeBars
   creerHTML() {
     const lifeBarsContainer = document.getElementById("lifeBars");
@@ -69,7 +70,7 @@ export default class Lifebar {
 
     let barre = document.createElement("div");
     barre.style.border = "1px solid white";
-    barre.style.height = "10px";
+    barre.style.height = "12px";
     barre.style.borderRadius = "3px";
     barre.style.margin = "5px"
 
@@ -78,7 +79,7 @@ export default class Lifebar {
     let barreDeVie = document.createElement("div");
     barreDeVie.id = "barre" + this.id;
     barreDeVie.style.width = "100%";
-    barreDeVie.style.height = "10px";
+    barreDeVie.style.height = "12px";
     barreDeVie.style.backgroundColor = this.colour;
 
     barre.appendChild(barreDeVie);
@@ -103,6 +104,7 @@ export default class Lifebar {
   }
   lifeUp() {
     this.barreDeVie.style.width = this.#life + "%";
+
   }
 
 // Loses life but couldn't get the colour to change
@@ -122,5 +124,28 @@ export default class Lifebar {
         } 
     }, 250)
   }
-}
 
+    displayMessageIfLow() {
+      if (this.#life <= 80) {
+        const message = document.createElement("div");
+        message.textContent = this.#colour === "lightblue" ? "I'm Thirsty!" : "I'm Hungry!";
+        message.style.position = "absolute";
+        message.style.top = "10px";  
+        message.style.left = "50%"; 
+        message.style.transform = "translateX(-50%)";
+        message.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
+        message.style.padding = "10px";
+        message.style.borderRadius = "5px";
+        message.style.fontWeight = "bold";
+        message.style.fontSize = "18px";
+  
+        document.body.appendChild(message);
+
+  console.log("function called");
+
+        setTimeout(() => {
+          message.remove();
+        }, 3000);
+      }
+    }
+}
